@@ -19,6 +19,16 @@
             <label for="newsletter.center_title" class="text-gray-300">Center Title</label>
         </div>
 
+        <!-- Show Excerpt Checkbox -->
+        <div class="form-group mb-4 flex items-center">
+            <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600 rounded border-gray-600 mr-2"
+                   id="newsletter.show_excerpt" name="newsletter.show_excerpt"
+            <% if (Boolean(configs.newsletter.show_excerpt ?? false)) { %> checked
+                    <% } %>
+            >
+            <label for="newsletter.show_excerpt" class="text-gray-300">Show Excerpt</label>
+        </div>
+
         <!-- Track URL Clicks Checkbox -->
         <div class="form-group mb-4">
             <div class="flex items-center">
@@ -143,7 +153,7 @@
         <p class="text-gray-400 mb-4">Note: Save Changes before Preview</p>
 
         <button type="button" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                onclick="parent.open('/preview', '_blank')">Preview
+                onclick="parent.open('<%= ghoslerUrl %>/preview', '_blank')">Preview
         </button>
     </div>
 </div>
